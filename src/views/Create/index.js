@@ -3,33 +3,36 @@ import PropTypes from "prop-types";
 
 class Create extends React.Component {
 	static propTypes = {
-		history: PropTypes.object,
-		match: PropTypes.object
+		history: PropTypes.any,
+		match: PropTypes.any
 	}
 
-	redirect = (e) => {
+	handleCreate = (e) => {
 		e.preventDefault();
+		// TODO: Agregar y validar usuario
 		this.props.history.push("/users");
 	}
 
-	params = (e) => {
+	showMatch = (e) => {
 		e.preventDefault();
-		// let json = JSON.stringify(this.props.match);
-		// alert(json);
-
-		let queryId = this.props.match.params.id;
-		alert(queryId);
+		const matchString = JSON.stringify(this.props.match.params.id);
+		alert(matchString);
 	}
+
+	componentDidMount() {
+		// Llamar a un API usando match
+	}
+
 
 	render() {
 		return (
 			<div>
 				<h1>Create</h1>
 				<div>
-					<button onClick={this.redirect}>Redirect</button>
+					<button type="button" onClick={this.handleCreate}>Crear</button>
 				</div>
 				<div>
-					<button onClick={this.params}>See params</button>
+					<button type="button" onClick={this.showMatch}>Mostrar match</button>
 				</div>
 			</div>
 		);
