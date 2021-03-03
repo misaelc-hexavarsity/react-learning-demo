@@ -9,17 +9,17 @@ class User extends React.Component {
 	static propTypes = {
 		name: PropTypes.string,
 		imageUrl: PropTypes.string,
-		category: PropTypes.string,
-		description: PropTypes.string,
-		projectNumber: PropTypes.number
+		username: PropTypes.string,
+		address: PropTypes.string,
+		phone: PropTypes.string
 	}
 
 	static defaultProps = {
-		name: "Misael",
-		imageUrl: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FHTML%2FElement%2Fimg&psig=AOvVaw3za_KVu-FfwMLLToDQRSyN&ust=1614810566870000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMCbiafUku8CFQAAAAAdAAAAABAD",
+		username: "Misael",
+		imageUrl: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.w3schools.com%2Fhowto%2Fhowto_css_image_overlay_icon.asp&psig=AOvVaw1HEjEYGF7ktr2Dlr5oZFVg&ust=1614895997267000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDWoMWSle8CFQAAAAAdAAAAABAD",
 		category: "Developer",
-		description: "He likes React",
-		projectNumber: 0
+		address: "Saltillo 123",
+		phone: ""
 	}
 
 	// We can have methods that returns JSX expressions
@@ -33,18 +33,18 @@ class User extends React.Component {
 	}
 
 	render() {
-		const { name, imageUrl, category, description, projectNumber } = this.props;
+		const { name, imageUrl, username, address, phone } = this.props;
 		return(
 			<React.Fragment>
 				<Card
 					image={imageUrl}
 					header={name}
-					meta={category}
-					description={description}
+					meta={username}
+					description={address}
 					extra={
 						<a>
-							<Icon name='user' />
-							{`${number} Projects`}
+							<Icon name='phone' />
+							{phone}
 						</a>
 					}
 				/>

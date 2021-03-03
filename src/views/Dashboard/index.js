@@ -1,17 +1,13 @@
 // Libraries
 import React from "react";
+import { Context } from "../../libs/context";
 
 // Components
 // import TextInput from "../../components/TextInput";
 import UserList from "../../components/UserList";
 
-const users = [
-	{ name: "Misael", category: "Developer", projectNumber: 4, description: "React Training" },
-	{ name: "Jesus", category: "Developer", projectNumber: 2, description: "React Training" },
-	{ name: "Alonso", category: "Developer", projectNumber: 1, description: "React Training" }
-]
-
 class Dashboard extends React.Component {
+	static contextType  = Context;
 
 	state = {
 		name: ""
@@ -26,6 +22,7 @@ class Dashboard extends React.Component {
 	}
 
 	render() {
+		const { users } = this.context;
 		return (
 			<section>
 				<UserList users={users} />

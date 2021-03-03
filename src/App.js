@@ -1,5 +1,7 @@
 import React from "react";
 import './App.css';
+import api from "./libs/api";
+import { Context } from "./libs/context";
 
 // Components
 import Menu from "./components/Menu";
@@ -19,6 +21,15 @@ import NotFound from "./views/NotFound";
 import "semantic-ui-css/semantic.min.css";
 
 class App extends React.Component {
+  static contextType = Context;
+
+  componentDidMount() {
+		const { updateUsers } = this.context;
+		api.get("/users").then(response => {
+			updateUsers(response.data);
+		})
+	}
+
   render() {
     return (
       <div className="App">

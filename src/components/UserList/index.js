@@ -19,21 +19,21 @@ class UserList extends React.Component {
     				<Table.Header>
 						<Table.Row>
 							<Table.HeaderCell>Name</Table.HeaderCell>
-							<Table.HeaderCell>Category</Table.HeaderCell>
-							<Table.HeaderCell>Project Number</Table.HeaderCell>
-							<Table.HeaderCell>Description</Table.HeaderCell>
+							<Table.HeaderCell>Username</Table.HeaderCell>
+							<Table.HeaderCell>Phone</Table.HeaderCell>
+							<Table.HeaderCell>Address</Table.HeaderCell>
 						</Table.Row>
 					</Table.Header>
 
 					<Table.Body>
 						{
-							users.map((value, index) => {
+							users && users.length > 0 && users.map((value) => {
 								return (
-									<Table.Row key={index}>
+									<Table.Row key={value.id}>
 										<Table.Cell>{value.name}</Table.Cell>
-										<Table.Cell>{value.category}</Table.Cell>
-										<Table.Cell>{value.projectNumber}</Table.Cell>
-										<Table.Cell>{value.description}</Table.Cell>
+										<Table.Cell>{value.username}</Table.Cell>
+										<Table.Cell>{value.phone}</Table.Cell>
+										<Table.Cell>{`${value.address.street} ${value.address.suite}`}</Table.Cell>
 									</Table.Row>
 								);
 							})
