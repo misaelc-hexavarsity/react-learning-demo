@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 // Components
 import { Message } from 'semantic-ui-react'
 
+// Assets
+import "./styles.css";
+
 class Post extends React.Component {
 	static propTypes = {
 		id: PropTypes.number,
@@ -16,7 +19,7 @@ class Post extends React.Component {
 	render() {
 		const { title, message } = this.props;
 		return (
-			<section>
+			<section className="post">
 				<Message>
 					<Message.Header>{title}</Message.Header>
 					<p>{message}</p>

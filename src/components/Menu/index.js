@@ -8,6 +8,9 @@ class Menu extends React.Component {
 				<Link to="/dashboard">
 					Dashboard
 				</Link>
+				<Link to="/posts">
+					Posts
+				</Link>
 				<Link to="/user">
 					User
 				</Link>

@@ -19,10 +19,10 @@ class PostList extends React.Component {
 		const { posts } = this.props;
 		return(
 			<section>
-				<header>Post List</header>
+				<h1>Post List</h1>
 				{
 					posts && posts.length > 0
-						? postMessage.map(value => {
+						? posts.map(value => {
 							return (
 								<Post
 									key={value.id}
