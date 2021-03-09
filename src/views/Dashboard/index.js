@@ -5,6 +5,7 @@ import { Context } from "../../libs/context";
 // Components
 // import TextInput from "../../components/TextInput";
 import UserList from "../../components/UserList";
+import api from "../../libs/api";
 
 class Dashboard extends React.Component {
 	static contextType  = Context;
